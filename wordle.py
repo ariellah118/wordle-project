@@ -47,12 +47,12 @@ else:
             else:
                 print("Your guess is not a valid word.")
             guess = input(f"Make a guess ({wordle_engine.format_letters(letter_status)}): ")
-        formatted_guess = wordle_engine.format_guess(target, guess)
-        wordle_engine.update_letter_status(letter_status, target, guess)
-        guesses += str(turns) + '. ' + formatted_guess + '\n'
-        if guess == target:
+        formatted_guess = wordle_engine.format_guess(target, guess)  # make the letters the appropriate colors
+        wordle_engine.update_letter_status(letter_status, target, guess)  # change the letters in the dict
+        guesses += str(turns) + '. ' + formatted_guess + '\n'  # add this guess to the string of all the other guesses
+        if guess == target:  # if the guess is the same as the target then player wins
             print(guesses + 'You win!')
             break
-        print(guesses)
-    if turns == 6:
+        print(guesses)  # otherwise print all the guesses and take another turn until 6 turns
+    if turns == 6:  # if you already took 6 turns and didn't guess the work then you lose.
         print("You lose!")

@@ -19,8 +19,9 @@ class wordle_colors:
 wordle_alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 def welcome_string():
-    return f"Welcome to {wordle_colors.GREEN}W{wordle_colors.RED}o{wordle_colors.BLUE}r{wordle_colors.YELLOW}d\
-            {wordle_colors.CYAN}l{wordle_colors.MAGENTA}e{wordle_colors.ENDC}"
+    return (f"Welcome to {wordle_colors.GREEN}W{wordle_colors.RED}o{wordle_colors.BLUE}r{wordle_colors.YELLOW}d"
+            f"{wordle_colors.CYAN}l{wordle_colors.MAGENTA}e{wordle_colors.ENDC}"
+            )
 
 def create_letter_status():
     """ Initialize and Return a new dictionary that maps each letter to
