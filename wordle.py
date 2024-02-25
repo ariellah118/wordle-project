@@ -34,3 +34,24 @@ else:
 #   * Please display the entire history of guesses before each prompt.
 #   * Print a message at the end of the game indicating whether the player won or lost.
 #      * If the player wins, display the entire sequence of guesses as part of the final message.
+    turns = 0
+    guesses = ''
+    letter_status = wordle_engine.create_letter_status()
+    while turns < 6:
+        turns += 1  # increment the amount of turns
+        guess = input(f"Make a guess ({wordle_engine.format_letters(letter_status)}): ")  # get a guess from the user
+        while guess not in valid_words:  # if the guess isn't in the list of valid words then keep asking until get a valid guess
+            if len(guess) != 5:
+                print("Your guess must be 5 letters.")
+            else:
+                print("Your guess is not a valid word.")
+            guess = input(f"Make a guess ({wordle_engine.format_letters(letter_status)}): ")
+        formatted_guess = wordle_engine.format_guess(target, guess)
+        wordle_engine.update_letter_status(letter_status, target, guess)
+        guesses += str(turns) + '. ' + formatted_guess + '\n'
+        if guess == target:
+            print(guesses + 'You win!')
+            break
+        print(guesses)
+    if turns == 6:
+        print("You lose!")
