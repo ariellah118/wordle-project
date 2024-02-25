@@ -24,7 +24,8 @@ if len(sys.argv) >= 2:
     target = sys.argv[1]
 else:
     # TODO choose a random word from valid_words
-    target = 'alter'  # <== change this
+    wordle_options = wordle_engine.load_words("shuffled_real_wordles.txt")
+    target = random.choice(tuple(wordle_options))
 
 # TODO Implement the rest of the game.
 # Remember:
