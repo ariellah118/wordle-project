@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/bCgl85tc)
 # Python MidTerm Assignment
 
 For this project, you are going to implement a _text-based_ version of Wordle that produces colored output.
