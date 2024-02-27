@@ -52,6 +52,7 @@ else:
         guesses += str(turns) + '. ' + formatted_guess + '\n'  # add this guess to the string of all the other guesses
         if guess == target:  # if the guess is the same as the target then player wins
             print(guesses + 'You win!')
+            turns -= 1  # takes away one turn so if guessed on 6th round, you won't lose
             break
         print(guesses)  # otherwise print all the guesses and take another turn until 6 turns
     if turns == 6:  # if you already took 6 turns and didn't guess the work then you lose.
